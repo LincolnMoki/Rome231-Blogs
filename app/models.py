@@ -54,8 +54,8 @@ class Comment(db.Model):
     def __repr__(self):
         return f"Comment('{self.content}', '{self.date_posted}')"
     
- class Quote:
+class Quote:
     def __init__ (self,author,quote):
         self.author = author
         self.quote = quote
-        # self.permalink = permalink       
+            
