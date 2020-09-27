@@ -1,0 +1,19 @@
+import os
+import secrets
+from PIL import Image
+from flask import render_template, url_for, flash, redirect, request, abort
+from app import app, db, bcrypt, mail
+from app.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
+                             PostForm, RequestResetForm, ResetPasswordForm, CommentForm)
+from .models import User, Post, Comment
+from flask_login import login_user, current_user, logout_user, login_required
+from flask_mail import Message
+from app import requests
+
+@app.route("/")
+@app.route("/home")
+def home():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page,per_page=5)
+    return render_template('home.html', posts=posts)
+
