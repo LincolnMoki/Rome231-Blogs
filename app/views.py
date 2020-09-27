@@ -17,3 +17,8 @@ def home():
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page,per_page=5)
     return render_template('home.html', posts=posts)
 
+
+@app.route("/about")
+def about():
+    quote =requests.get_quote()
+    return render_template('about.html', title='About', quote=quote)
