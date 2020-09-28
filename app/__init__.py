@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
+from app import views
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ronny'
@@ -20,4 +21,3 @@ app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER')
 app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASS')
 mail = Mail(app)
 
-from app import views
