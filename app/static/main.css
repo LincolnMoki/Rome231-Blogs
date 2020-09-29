@@ -1,0 +1,29 @@
+ 
+body {
+    background-image:url("https://cdn.pixabay.com/photo/2020/09/22/06/26/among-us-5592050_960_720.png") ;
+    color: grey;
+    margin-top: 5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+  }
+  
+  .bg-steel {
+    background-color:black;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+  }
+  
