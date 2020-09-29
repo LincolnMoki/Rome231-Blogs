@@ -20,7 +20,7 @@ def home():
 
 @app.route("/about")
 def about():
-    quote =request.get_quote()
+    quote =requests.get_quote()
     return render_template('about.html', title='About', quote=quote)
 
 @app.route("/register", methods=['GET', 'POST'])

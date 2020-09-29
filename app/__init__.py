@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
-from config import DevConfig
+from config import ProdConfig
 from flask_bootstrap import Bootstrap
 
 
@@ -23,7 +23,7 @@ mail = Mail(app)
 app = Flask(__name__,instance_relative_config=True)
 
 
-app.config.from_object(DevConfig)
+app.config.from_object(ProdConfig)
 app.config.from_pyfile('config.py')
 
 
