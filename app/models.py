@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
     posts = db.relationship('Post', backref='author', lazy=True)
     comments = db.relationship('Comment', backref='author', lazy=True)
+    roles = db.relationship('Role', backref='author', lazy=True)
     
 
     def get_reset_token(self, expires_sec=1800):
@@ -58,4 +59,14 @@ class Quote:
     def __init__ (self,author,quote):
         self.author = author
         self.quote = quote
-            
+
+class Role(db.Model):
+    __tablename__ = 'roles'
+
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.String(255))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+
+    def __repr__(self):
+        return f'User {self.name}'            
