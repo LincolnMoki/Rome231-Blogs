@@ -66,10 +66,10 @@ Open the application on your browser `127.0.0.1:5000`.
 
 ## Contact Information
 
-dennismwaniki67@gmail.com
+mwithiamoki@gmail.com
 
 ## Live Link To Project
-https://firewood.herokuapp.com/
+https://rome231blog.herokuapp.com/
 
 
 
